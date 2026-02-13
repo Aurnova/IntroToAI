@@ -1,0 +1,50 @@
+# Continue config: Cursor-like IDE using Qwen3 Coder Next via OpenRouter
+# Get your API key at https://openrouter.ai/settings/keys
+# In Codespaces: add OPENROUTER_API_KEY to repo or user secrets.
+name: Intro to AI
+version: "1.0.0"
+schema: v1
+
+models:
+  - name: Qwen3 Coder Next (OpenRouter)
+    provider: openai
+    apiBase: https://openrouter.ai/api/v1
+    model: qwen/qwen3-coder-next
+    contextLength: 262144
+    roles:
+      - chat
+      - edit
+      - apply
+      - summarize
+    capabilities:
+      - tool_use
+    defaultCompletionOptions:
+      temperature: 0.7
+      maxTokens: 8192
+    requestOptions:
+      headers:
+        # Use env OPENROUTER_API_KEY (set in Codespaces secrets)
+        Authorization: "Bearer ${OPENROUTER_API_KEY}"
+
+  # Tutor AI: same model, pedagogical focus. Use for conceptual help and Socratic guidance.
+  - name: Tutor AI (OpenRouter)
+    provider: openai
+    apiBase: https://openrouter.ai/api/v1
+    model: qwen/qwen3-coder-next
+    contextLength: 262144
+    roles:
+      - chat
+    defaultCompletionOptions:
+      temperature: 0.6
+      maxTokens: 4096
+    requestOptions:
+      headers:
+        Authorization: "Bearer ${OPENROUTER_API_KEY}"
+    chatOptions:
+      baseSystemMessage: |
+        You are a patient, Socratic tutor for students learning AI and programming.
+        Your role is to teach and guide, not to do the work for them. Prefer asking
+        questions and giving hints over full answers. Explain concepts clearly, use
+        examples when helpful, and encourage reasoning. If they ask for direct code
+        or solutions, steer them toward understanding the idea first, then offer
+        structure or pseudocode before full implementations. Be encouraging and clear.
