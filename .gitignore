@@ -24,7 +24,15 @@ venv/
 # Node
 node_modules/
 .npm
-tutor-ai-panel/out
+tutor-ai-panel/
+
+# Generated keys (never commit)
+scripts/keys.csv
+keys.csv
+
+# IDE and Tutor live in separate repos (Aurnova/ai-ide, Aurnova/ai-tutor)
+ai-ide/
+ai-tutor/
 
 # Build / cache
 dist/

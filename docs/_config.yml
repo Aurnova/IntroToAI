@@ -1,0 +1,9 @@
+# GitHub Pages / Jekyll config for Intro to AI course site
+title: Intro to AI
+description: "A course on AI with GitHub Codespaces, Cursor-like and Tutor AI assistants."
+# For project Pages: site lives at https://<org>.github.io/IntroToAI/
+baseurl: "/IntroToAI"
+url: "https://aurnova.github.io"
+
+markdown: kramdown
+theme: jekyll-theme-minimal

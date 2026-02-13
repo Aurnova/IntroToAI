@@ -13,7 +13,7 @@
    In your assignment repo, open the project in GitHub Codespaces.
 
 2. **Optional: Enable AI**  
-   If you want to use the AI assistant, add your OpenRouter API key as a Codespaces secret named `OPENROUTER_API_KEY`, then reload the Codespace. Open the Continue panel and select **Qwen3 Coder Next (OpenRouter)**.
+   Your institution provides an OpenRouter key (often already set on your repo). If not, add it as a secret named `OPENROUTER_API_KEY`, then reload the Codespace. Open the Continue panel and select **Qwen3 Coder Next (OpenRouter)**.
 
 3. **Edit this file**  
    In `assignments/01-getting-started/`, add a short answer below.

@@ -1,0 +1,5 @@
+{
+  "name": "smoke",
+  "description": "Smoke test scenario",
+  "prompt": "Say hello in JSON: {\"greeting\": \"...\"}"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "intro_smoke",
+  "description": "INTRO course smoke scenario",
+  "prompt": "Reply with JSON: {\"status\": \"ok\"}"
+}

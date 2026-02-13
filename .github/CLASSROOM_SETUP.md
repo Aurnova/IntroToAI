@@ -38,14 +38,12 @@ Students will get their own repos created from this template when they accept th
 
 ---
 
-## 4. (Optional) Give students an OpenRouter API key
+## 4. Give each student an OpenRouter API key ($10/month limit)
 
-Students can use their own free key from [OpenRouter](https://openrouter.ai/settings/keys). If you want to provide one for the class:
+**Recommended:** Use one OpenRouter API key per student with a **$10/month** spending limit. The institute creates keys via OpenRouter’s Management API and assigns each key to the student’s repo so Codespaces gets it automatically.
 
-- **Option A – You provide a key:** Create a single OpenRouter key for the course. Add it as a **repository secret** in each student repo (e.g. via a script or GitHub API), or instruct students to add it once you share it securely.
-- **Option B – Org-level secret in Codespaces:** If your org uses Codespaces and allows org-level secrets, add `OPENROUTER_API_KEY` there so it’s available in every Codespace for that org. Students don’t need to add it themselves.
-
-The dev container and Continue config already expect an environment variable `OPENROUTER_API_KEY`; no code changes are required.
+- **Full guide:** [.github/INSTITUTE_OPENROUTER_KEYS.md](INSTITUTE_OPENROUTER_KEYS.md) — create a Management API key, run the provided script to create keys per student and (optionally) set `OPENROUTER_API_KEY` on each repo via GitHub CLI.
+- **Summary:** Add credits to one OpenRouter account → create a Management key → run `scripts/create-student-keys.js` with a students CSV → script creates keys (limit $10, reset monthly) and can set the secret on each student repo. Students then get the key automatically in Codespaces.
 
 ---
 
@@ -53,7 +51,7 @@ The dev container and Continue config already expect an environment variable `OP
 
 - Students use the **invitation link** → accept the assignment → get a new repo.
 - They open that repo in **Codespaces** (Code → Codespaces → Create codespace on main).
-- They follow the main [README](../README.md) to optionally set `OPENROUTER_API_KEY` and use the AI assistant.
+- If the institute set repo secrets, the AI key is already available. Otherwise they add `OPENROUTER_API_KEY` (see [README](../README.md)) and use the AI assistants.
 - They do work in **`assignments/`** and push to the default branch. You grade by looking at their repo (or using any automation you add).
 
 ---
@@ -81,5 +79,5 @@ The dev container and Continue config already expect an environment variable `OP
 - [ ] Repo is set as **Template repository** (Settings → General).
 - [ ] Classroom created and linked to your GitHub org.
 - [ ] Assignment created from this template; **invitation link** copied and shared.
-- [ ] (Optional) OpenRouter key decided: student-owned vs. you provide vs. org secret.
-- [ ] Students know to open their repo in **Codespaces** and (optionally) set **OPENROUTER_API_KEY** for the AI assistant.
+- [ ] OpenRouter keys: run [INSTITUTE_OPENROUTER_KEYS.md](INSTITUTE_OPENROUTER_KEYS.md) to create one key per student ($10/month) and set repo secrets (or distribute keys securely).
+- [ ] Students know to open their repo in **Codespaces**; the AI key is pre-set if you used the script.

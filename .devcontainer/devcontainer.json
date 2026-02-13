@@ -7,17 +7,13 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "Continue.continue"
-      ],
-      "settings": {
-        "continue.telemetryEnabled": false
-      }
+      "extensions": ["Continue.continue"],
+      "settings": { "continue.telemetryEnabled": false }
     }
   },
   "remoteEnv": {
     "OPENROUTER_API_KEY": "${containerEnv:OPENROUTER_API_KEY}"
   },
-  "postCreateCommand": "mkdir -p /home/vscode/.continue && [ -f .continue/config.yaml ] && cp -n .continue/config.yaml /home/vscode/.continue/config.yaml || true; if [ -d tutor-ai-panel ]; then (cd tutor-ai-panel && npm install && npm run compile) && EXT=/home/vscode/.vscode-server/extensions && mkdir -p \"$EXT/aurnova.tutor-ai-panel-0.1.0\" && cp tutor-ai-panel/package.json \"$EXT/aurnova.tutor-ai-panel-0.1.0/\" && cp -r tutor-ai-panel/out tutor-ai-panel/resources \"$EXT/aurnova.tutor-ai-panel-0.1.0/\"; fi",
+  "postCreateCommand": "bash .devcontainer/setup-ide-tutor.sh",
   "forwardPorts": [3000, 8888]
 }

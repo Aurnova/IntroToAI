@@ -1,0 +1,8 @@
+{
+  "name": "intro-to-ai-scripts",
+  "private": true,
+  "description": "Scripts for creating per-student OpenRouter keys",
+  "scripts": {
+    "create-keys": "node create-student-keys.js"
+  }
+}
